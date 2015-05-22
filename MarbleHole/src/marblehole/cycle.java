@@ -2,9 +2,14 @@ package marblehole;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.jse.*;
 
 public class cycle {
     //initialize
+    Globals globals = JsePlatform.standardGlobals();
+    LuaValue chunk = globals.loadfile("luaScripts/hello.lua");
+    //chunk.call();
     public int[][] map2D = new int[2][6];
     public int[] playerScore = new int[2];
     public mainFrame m = new mainFrame();
